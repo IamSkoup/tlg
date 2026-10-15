@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#12272a">
+  <meta name="description" content="Хранитель Лев: Эхо Древа — неофициальная офлайн визуальная новелла.">
+  <title>Хранитель Лев: Эхо Древа</title>
+  <link rel="icon" href="assets/ui/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <div id="art" class="art" role="img" aria-label="Иллюстрация сцены"></div>
+    <div class="art-shade"></div>
+    <div id="roar-fx" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div id="dust-fx" aria-hidden="true"></div>
+    <div id="danger-fx" aria-hidden="true"></div>
+
+    <section id="menu" class="menu screen" aria-label="Главное меню">
+      <div class="menu-heroes" aria-hidden="true"></div>
+      <div class="menu-inner">
+        <div class="eyebrow">Неофициальная интерактивная история</div>
+        <h1><span>Хранитель Лев</span><strong>Эхо Древа</strong></h1>
+        <p class="english-title">The Lion Guard: Echoes of the Tree</p>
+        <p class="menu-lead">Две земли. Одна река. Решение, которое нельзя принять в одиночку.</p>
+        <nav class="menu-actions" aria-label="Разделы игры">
+          <button id="new-game" class="button primary">Новая игра</button>
+          <button id="continue-game" class="button">Продолжить</button>
+          <button id="chapters-button" class="button">Главы</button>
+          <button id="endings-button" class="button">Концовки</button>
+          <button id="settings-button" class="button">Настройки</button>
+        </nav>
+        <p class="menu-note">Игра сохраняется в этом браузере. Интернет не требуется.</p>
+      </div>
+      <div class="menu-mark" aria-hidden="true">✦</div>
+    </section>
+
+    <section id="game" class="game screen hidden" aria-label="История">
+      <header class="game-top">
+        <div class="chapter-mark"><span id="chapter-kicker"></span><strong id="chapter-name"></strong></div>
+        <div class="top-actions">
+          <button id="history-button" class="small-button">История</button>
+          <button id="game-settings-button" class="small-button">Настройки</button>
+          <button id="menu-button" class="small-button">Меню</button>
+        </div>
+      </header>
+      <div id="chapter-card" class="chapter-card hidden" aria-live="polite"><span></span><strong></strong></div>
+      <div id="toast" class="toast hidden" role="status"></div>
+      <div id="qte-counter" class="qte-counter hidden" aria-live="polite"></div>
+      <div id="choice-panel" class="choice-panel hidden" aria-label="Варианты выбора"></div>
+      <div id="dialogue" class="dialogue" role="button" tabindex="0" aria-label="Продолжить диалог">
+        <div id="portrait" class="portrait hidden" aria-hidden="true"></div>
+        <div class="dialogue-body">
+          <div id="speaker" class="speaker"></div>
+          <p id="line"></p>
+          <span id="next-indicator" class="next-indicator">◆</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="ending-screen" class="ending-screen screen hidden" aria-label="Концовка">
+      <div class="ending-panel">
+        <div class="eyebrow">История завершена</div>
+        <h2 id="ending-title"></h2>
+        <p id="ending-description"></p>
+        <div class="ending-actions"><button id="ending-menu" class="button primary">Главное меню</button><button id="ending-restart" class="button">Новая игра</button></div>
+      </div>
+    </section>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-panel">
+        <header><h2 id="modal-title"></h2><button id="modal-close" class="icon-button" aria-label="Закрыть">×</button></header>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </main>
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
